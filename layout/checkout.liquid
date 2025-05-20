@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ghblwyz8i6");
+</script>
+
+{% if request.host contains "au.pokepetshop" %}
+  <!-- Meta Pixel Code AP added 09-01-2024 -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3556343574608315');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3556343574608315&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code AP added 09-01-2024 -->  
+
+<!-- Start Tiktok Pixel Code AP added 19-01-2024 -->  
+  <script>
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+  
+    ttq.load('CMKCV53C77U1UD4A74H0');
+    ttq.page();
+  }(window, document, 'ttq');
+  </script>
+<!-- End Tiktok Pixel Code AP added 19-01-2024 -->
+            
+  
+{% elsif request.host contains 'ca.pokepetshop.com' %}
+<!-- Pixel for Canada AP added 18-1-2024-->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '691097186473421');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=691097186473421&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+{% elsif request.host contains 'pokepetshop.co.uk' %}
+<!-- Pixel for United Kingdom: AP added 18-1-2024-->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1320717905329279');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1320717905329279&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+  
+{% endif %}
+    
+</head>
+  <body>
+    {{ skip_to_content_link }}
+
+    <header class="banner" data-header role="banner">
+    <!-- Each image is 320px by 315px -->
+      <div class="checkout-banner mobileslider">      
+        <div class="checkout-banner__inner"></div>
+      </div>
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </header>
+
+    {{ order_summary_toggle }}
+    <div class="content" data-content>
+
+      <div class="checkout-banner desktopslider">      
+        <div class="checkout-banner__inner"></div>
+      </div>
+
+      <div class="wrap">
+        <div class="main">
+          <header class="main__header" role="banner">
+            {{ content_for_logo }}
+            <div class="checkout_header_countdownholder hidden">We are reserving your cart for <span id="countdown" class="yellow_text"></span> minutes!</div>
+
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </header>
+          <main class="main__content" role="main">
+            {{ content_for_layout }}
+          </main>
+          <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer>
+        </div>
+        <aside class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    {{ tracking_code }}
+    
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+.banner {padding: 0 0 1.5em;}
+.checkout-banner.mobileslider{display:none;}
+.checkout-banner.desktopslider{display:block;}  
+.hidden{display:none;}
+
+.checkout-banner {position: relative;height: 160px;width: 100vw;margin: 10px 0;}
+.checkout-banner .checkout-banner__inner {height: 160px;top: 0;left: 0;background-repeat: repeat-x;background-size: auto 100%;animation: bannermove 50s linear infinite;background-image: url(//cdn.shopify.com/s/files/1/0509/2212/7555/files/banners-all.png);}
+/*keyframe animations*/   
+@keyframes bannermove {
+ 0% {margin-left: 0px;}
+ 100% {margin-left: -3000px;}
+}
+  
+  .step__footer{flex-wrap: wrap-reverse;}
+  .custom_checkout_text{margin: 0 0 15px 0;border: 2px solid #000;padding: 8px;border-radius: 5px;line-height: normal;}
+  .custom_checkout_text strong{font-weight: 700;}
+  .custom_checkout_text center{color:#ff0000;}
+
+  .checkout_header_countdownholder{text-align: center;background: #000;padding: 10px 20px;border: 1px solid #000;font-size: 14px;color: #fff;font-weight: bold;-webkit-border-radius: 25px;-moz-border-radius: 25px;border-radius: 25px;margin: 20px 40px;}
+
+  .yellow_text, .checkout-trust__content span{color: #dbb446;}
+  .checkout-trust .checkout-trust__title{text-align: center;font-size: 20px;color: #000;margin: 30px 0;text-transform: uppercase;font-weight: bold;line-height: normal;}
+  .checkout-trust .checkout-logo{padding: 0 0 50px 0;}
+  .checkout-trust .checkout-trust__item{display: flex;align-items: center;margin: 0 0 40px;}
+  .checkout-trust .checkout-trust__item:last-child{margin: 0px;}
+  .checkout-trust .checkout-trust__item img{max-width: 75px;vertical-align: middle;}
+  .checkout-trust .checkout-trust__content{margin-left: 20px;}
+  .checkout-trust .checkout-trust__content span{font-size: 17px;text-transform: uppercase;font-weight: bold;}
+  .checkout-trust .checkout-trust__content p{font-size: 15px;color: #000;}
+  
+  @media only screen and (max-width: 1200px) {    
+    .checkout-trust .checkout-trust__item img {max-width: 60px;}
+    .checkout-trust .checkout-trust__content span {font-size: 14px;}
+    .checkout-trust .checkout-trust__content p {font-size: 12px;}
+    
+  }
+  @media only screen and (max-width: 1024px) {
+    .checkout-trust .checkout-trust__title {font-size: 18px;}  
+  }
+  @media only screen and (max-width: 1000px) {
+   .checkout-banner.mobileslider{display: block;/*padding-bottom: 1.2em;overflow: hidden;*/}
+   .checkout-banner.desktopslider{display:none;}      
+    
+   .checkout-trust .checkout-trust__title {font-size: 22px;}
+   .checkout-trust .checkout-logo {padding: 0 0 30px 0;}  
+   .checkout-trust .checkout-trust__item img {max-width: 75px;} 
+   .checkout-trust .checkout-trust__content span {font-size: 18px;}
+   .checkout-trust .checkout-trust__content p {font-size: 15px;}
+    
+   .checkout_header_countdownholder {margin: 0 40px 20px 40px;} 
+  }
+  
+  @media only screen and (max-width: 767px) { 
+    .step__footer {
+      flex-wrap: wrap-reverse;
+      display: flex;
+      flex-direction: row-reverse;
+      flex-flow: wrap-reverse;
+      justify-content: center;
+    }
+    .step__footer .shown-if-js, .step__footer #continue_button{order: 2;width: 100%;}
+    .step__footer .step__footer__previous-link{order: 1;}
+    .custom_checkout_text{order:3; }
+
+    .checkout-banner {height: auto;}
+    .checkout-banner .checkout-banner__inner {height: 100px;}
+  }
+  @media only screen and (max-width: 568px) {
+    .checkout-trust .checkout-trust__title {font-size: 20px;}
+    .checkout-trust .checkout-trust__item img {max-width: 60px;}
+    .checkout-trust .checkout-trust__content span {font-size: 16px;}
+    .checkout-trust .checkout-trust__content p {font-size: 13px;}
+  }
+  @media only screen and (max-width: 480px) {
+  .checkout_header_countdownholder {margin: 0 0 20px 0;}  
+  }
+  
+  @media only screen and (max-width: 414px) {
+   .checkout-trust .checkout-trust__content span {font-size: 14px;}
+   .checkout-trust .checkout-trust__content p {font-size: 12px;}
+  }
+  @media only screen and (max-width: 375px) {
+  .checkout_header_countdownholder {font-size: 12px;}
+  }
+  @media only screen and (max-width: 330px) {
+    .checkout-trust .checkout-trust__title {font-size: 18px;}
+    .checkout_header_countdownholder {font-size: 11px;}
+  }
+</style>
+<script>
+  var currentStep = $('.step').attr('data-step');  
+  var checkout_note = {{ settings.checkout_note | json }};
+  //alert(checkout_note);
+  (function($) { 
+  $(document).on('page:load page:change', function () {  
+    if(currentStep == "payment_method"){
+    $(".step__footer").append(checkout_note);
+  }  
+       
+  });   
+})(jQuery); 
+
+var checkout_trust_text = '<div class="checkout-trust"><h4 class="checkout-trust__title">Why Over <span class="yellow_text">150k+</span> Customers Trust In</h4><div class="checkout-logo logo--center"><img alt="Poke Pet Shop" class="logo__image logo__image--small" src="//cdn.shopify.com/s/files/1/0509/2212/7555/files/checkout-logo.png"></div><div class="checkout-trust__wrapper"><div class="checkout-trust__item"><img src="{{ "check-out-logo-2.png" | asset_url }}"><div class="checkout-trust__content"><span>Quality Materials</span><p>We are proud to offer our customers high quality products made from quality materials.</p></div></div><div class="checkout-trust__item"><img src="{{ "check-out-logo-3.png" | asset_url }}"><div class="checkout-trust__content"><span>Top Rated Artist</span><p>Our top award winning team of artist wil ensure you receive the best,unique art possible.</p></div></div></div></div>';
+
+if($(window).width() > 1000){        
+  $('.order-summary__section.order-summary__section--total-lines').after(checkout_trust_text);
+}else{   
+  $('.step__footer').after(checkout_trust_text);
+}
+
+
+/* checkout Countdown logic */
+ 
+const timerValue = 602;	  // this value is in seconds  
+  let time = localStorage.getItem('checkout_Countdown');
+    if(time == null) {
+      const checkout_Countdown = new Date().getTime() + (timerValue * 1000);
+      
+      localStorage.setItem('checkout_Countdown', checkout_Countdown);
+      time = checkout_Countdown;
+    }
+  
+  const timerID = setInterval(() => {
+  const now = new Date().getTime();
+  const difference = time - now;
+  
+  const totalSeconds = Math.floor(difference/1000);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  $(".checkout_header_countdownholder").removeClass("hidden");  
+  $('#countdown').html(minutes + ':' + ((seconds < 10) ? '0' + seconds : seconds));
+    
+  if(totalSeconds <= 0) {
+    clearInterval(timerID);
+    $('.checkout_header_countdownholder').html("Order reservation ended.");
+    localStorage.removeItem('checkout_Countdown');
+  }
+}, 1000);
+</script>
+
+    {%  if product %}
+      
+      <script type="text/javascript">
+var _learnq = _learnq || [];
+  var classname = document.getElementsByClassName("action_button add_to_cart ld-over-inverse");
+var addToCart = function() {
+_learnq.push(['track', 'Added to Cart', item]);
+}; for (var i = 0; i < classname.length; i++) {
+classname[i].addEventListener('click', addToCart, false);
+}
+</script>
+
+      {%  endif %}
+    
+  </body>
+</html>

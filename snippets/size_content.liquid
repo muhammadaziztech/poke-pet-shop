@@ -1,0 +1,116 @@
+<div class="pp_size_context">
+  <div id="pp_sizechart" class="js-menu js-menu--right">
+    
+    <div class="pp_sizechart_container">      
+      <span class="js-menu__close pp_close-sign">✕</span>
+      <p class="pp_sizechart_title">Products Available for your 100% <strong>Hand Drawn PokePet!</strong></p>
+      <div class="pp_sizechart_content-wrapper swatch_options">
+        <div class="swatch clearfix"> 
+          <div class="pp_sizechart_layouts">
+    
+            <div data-value="metal_card" data-swatch="Metal Card" class="swatch-element pp_sizechart_layout active">
+              <label for="swatch-0-metal-card-{{product.id}}" style="background-image: url({{'metal-card.png' | file_img_url: "master" }});" class="pieces">Metal Card<span class="crossed-out"></span></label>
+            </div>
+            
+            <div data-value="canvas_card" data-swatch="Canvas" class="swatch-element pp_sizechart_layout">
+              <label for="swatch-0-canvas-{{product.id}}" style="background-image: url({{'canvas-card.png' | file_img_url: "master" }});" class="pieces">Canvas<span class="crossed-out"></span></label>
+            </div>
+<!-- 
+            <div data-value="blanket_card" data-swatch="Blanket" class="swatch-element pp_sizechart_layout">
+              <label for="swatch-0-blanket-{{product.id}}" style="background-image: url({{'blanket-card.png' | file_img_url: "master" }});" class="pieces">Blanket<span class="crossed-out"></span></label>
+            </div>
+-->
+            <div data-value="bundles_card" data-swatch="Bundle" class="swatch-element pp_sizechart_layout">
+              <label for="swatch-0-bundle-{{product.id}}" style="background-image: url({{'bundles-card.png' | file_img_url: "master" }});" class="pieces">Bundle<span class="crossed-out"></span></label>
+            </div>
+        
+          </div>
+        </div>
+         
+        <div class="pp_sizechart_content">
+          <div class="pp_sizechart_images">
+
+				{% render "size_content_imgs" %}
+            
+          </div>
+<!--           <div class="pp_sizechart_sizes">         
+            <span class="size_option_title">Size: </span>
+          
+          </div>  -->
+
+<!--           <button class="pp_sizechart_back js-menu__close">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAABrUlEQVRoge2YwS4DQRzGfxE3JKKvgJSTcFdx0rj0gB644gXwGsLb2NaFF3BCcNF6AtzaWoetdDuz1d3Of2faZH7JHHay+eb7Zqed+Q94PB7PpFMBmt1WduwlM1WgBYTd1nRrJxuq+RBoOHWUgSTzLaLlNPbso5tvA4cuTaXFm3eFN++KiTZfQTcv3b6BJ6AGXADLkgGaOZsf1OrAxiQHCIEf4BqYNglgYwml+RrzJiEGHRmqJqIxZoAicEz0OxgUwuhL5B0iTgl4QQ9xZSpsM8QCcKeM1QHWTYVth3hVxqpJCO+RvLEdSYgrlNCXksg+YfNL1JVxzqWEbRU0J8oYgaR4Ugjpmrio6D8L62shpGviOfoDfArrA71rlQby1ypWAuTJCkOW0JRtRxnZVJ7f1RfGPcCB8iyymdliC30jW3LqKAMF4I1+8zdOHWWgANyjH+bWXJpKyzb6zIfApUtT/zELrAKnwC3JBU3AiAXNLvCBfu8/av8oJWWAQUkZL+obQv1pW4do2QydeaNaMyf+7ogeTIXK9M44OwL9STP9BTwS/UWeAYumpj0ej8cuv8+kc6k04sr4AAAAAElFTkSuQmCC"/>
+            Back</button> -->
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    
+<script>
+  //Usage:
+// add js-menu__open class to menu icon
+// add data-menu attr with the id of the menu to be expanded
+// add id to the menu element and the js-menu class
+// wrap menu in pp_size_context class
+// add js-menu--right or js-menu--left to set the slide direction 
+
+window.addEventListener('pplrAppInitiated' , function(e) {
+
+  $(".pplr-choose-product .pplrlabel").append("<span data-menu='#pp_sizechart' class='pp_sizechart product_info'>Product Info</span>");
+  
+  $('.pplr-choose-product .product_info').on('click', function(){
+    var size_container = $(this).attr('data-menu');
+
+    $('body').addClass('size_content_open');
+    $(size_container).toggleClass('js-menu__expanded');
+    $(size_container).parent().toggleClass('js-menu__expanded');
+
+    /*AP added 27/09/22 */
+  
+  });
+$('.pp_sizechart_content-wrapper .pp_sizechart_layout').on('click', function(){
+  $('.pp_sizechart_layout').removeClass('active');
+  $(this).addClass('active');
+
+  var selected_size = $(this).attr('data-value');
+
+  console.log(selected_size +"<<size");
+
+  $('.pp_sizechart_background').addClass('hidden');  
+  $('.pp_sizechart_background_content').find("[data-imgid='"+ selected_size +"']").removeClass('hidden');
+  
+
+   $('.pp_sizechart_txt').addClass('hidden');  
+   $('.pp_sizechart_image_content').find("[data-content='"+ selected_size +"']").removeClass('hidden');
+
+  
+  
+});
+  
+
+
+});
+$('.pp_size_context, .js-menu__close').on('click', function(event){
+    if ( $(event.target).hasClass('pp_size_context') || $(event.target).hasClass('js-menu__close') ) {
+      $('.js-menu__expanded').removeClass('js-menu__expanded');
+      $('body').removeClass('size_content_open');
+    }
+  });
+$('.pp_sizechart_layouts .swatch-element').on('click', function() {
+  $('.pp_sizechart_layouts .swatch-element.active').removeClass('active');
+  $(this).addClass('active');
+});
+
+$('.pp_sizechart_sizes .swatch-element').on('click', function() {
+  $('.pp_sizechart_sizes .swatch-element.active').removeClass('active');
+  $(this).addClass('active');
+});
+
+$('.pp_sizechart_frame .swatch-element').on('click', function() {
+  $('.pp_sizechart_frame .swatch-element.active').removeClass('active');
+  $(this).addClass('active');
+});
+  
+</script>

@@ -1,0 +1,197 @@
+<div class="our-quality-section">
+  
+  <div class="fully-customizable-section white-bg">
+    <div class="page-width">
+      <h2><span>Fully</span> Customizable</h2>
+      <div class="checkout-cards-slide">      
+        <div class="customizable-img">
+<!--           <img src="{{ 'fully-customizable.jpg' |  asset_url }}" alt="customizable"> -->
+          <img src="{{ section.settings.image_customizable | img_url:"master" }}" alt="customizable  {{ section.settings.image_customizable.alt }}">
+        </div>
+      </div>    
+<!--       <div class="btn button Button--secondary product_option">Pokefy it</div> -->
+    </div>
+  </div>
+
+  <div class="quality-section-tabs white-bg">
+
+    <div class="quality-tabs page-width">
+      <div class="quality-tab tab-active" data-tab="real">
+        <h2><span>Style</span> Real</h2>
+        <div class="quality-tab-slider-wrapper">
+          <span class="quality-arrow quality-tab-prev"></span>
+          <span class="quality-arrow quality-tab-next"></span>
+          <div class="quality-slide">
+            <div class="image-wrapper quality-image-big" style="">
+<!--               <img data-sizes="auto" src="{{ 'real-slide.jpg' | file_url }}" alt="Real"> -->
+              <img data-sizes="auto" src="{{ section.settings.image_real | img_url:"master" }}" alt="{{ section.settings.image_real.alt }}">
+            </div>
+            <div class="quality-slide-caption">
+              <span class="with-bg">With Background</span>
+              <span class="without-bg">Without Background</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quality-tabs-header">
+          <div class="quality-tab-title right tab-active" data-tab="real">
+            <span>Real</span>
+          </div>
+          <div class="quality-tab-title left" data-tab="cartoon">
+            <span>Cartoon</span>
+          </div>
+        </div>
+
+        <div class="quality-featured">
+          <div class="quality-feature">
+            <img src="{{ 'customizable-icon.png' | file_url }}" alt="Fully Customizable">
+            <p>Fully <strong>Customizable</strong></p>
+          </div>
+          <div class="quality-feature">
+            <img src="{{ 'worldwideship-icon.png' | file_url }}" alt="Worldwide Shipping">
+            <p>Worldwide <strong>Shipping</strong></p>
+          </div>
+          <div class="quality-feature">
+            <img src="{{ 'premium-icon.png' | file_url }}" alt="Premium Quality">
+            <p>Premium <strong>Quality</strong></p>
+          </div>
+          <div class="quality-feature">
+            <img src="{{ 'picture-icon.png' | file_url }}" alt="Your own Picture">
+            <p>YOUR OWN <strong>PICTURE</strong></p>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="quality-tab" data-tab="cartoon">
+        <h2><span>Style</span> Cartoon</h2>
+        <div class="quality-tab-slider-wrapper">
+          <span class="quality-arrow quality-tab-prev"></span>
+          <span class="quality-arrow quality-tab-next"></span>
+          <div class="quality-slide">
+            <div class="image-wrapper quality-image-big" style="">
+<!--               <img data-sizes="auto" src="{{ 'cartoon-slide.jpg' | file_url }}" alt="Cartoon"> -->
+              <img data-sizes="auto" src="{{ section.settings.image_cartoon | img_url:"master" }}" alt="{{ section.settings.image_cartoon.alt }}">
+            </div>
+            <div class="quality-slide-caption">
+              <span class="with-bg">With Background</span>
+              <span class="without-bg">Without Background</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quality-tabs-header">
+          <div class="quality-tab-title right tab-active" data-tab="real">
+            <span>Real</span>
+          </div>
+          <div class="quality-tab-title left" data-tab="cartoon">
+            <span>Cartoon</span>
+          </div>
+        </div>
+
+        <div class="quality-featured">
+          <div class="quality-feature">
+            <img src="{{ 'customizable-icon.png' | file_url }}" alt="Fully Customizable">
+            <p>Fully <strong>Customizable</strong></p>
+          </div>
+          <div class="quality-feature">
+            <img src="{{ 'worldwideship-icon.png' | file_url }}" alt="Worldwide Shipping">
+            <p>Worldwide <strong>Shipping</strong></p>
+          </div>
+          <div class="quality-feature">
+            <img src="{{ 'premium-icon.png' | file_url }}" alt="Premium Quality">
+            <p>Premium <strong>Quality</strong></p>
+          </div>
+          <div class="quality-feature">
+            <img src="{{ 'hand-drawn-icon.png' | file_url }}" alt="Hand-Drawn Artwork">
+            <p>Hand-Drawn <strong>Artwork</strong></p>
+          </div>
+        </div>
+
+      </div>
+<!-- 		<div class="btn button Button--secondary product_option">Pokefy it</div> -->
+    </div>
+
+  </div>
+
+  <div class="checkout-our-cards-section">
+    <h2><span>Checkout our cards in the</span> Real World</h2>
+    <div class="checkout-cards-slide">
+      <div class="carousel cards-slide" data-flickity>
+        <div class="carousel-cell">
+<!--           <img src="{{ 'metal-card.gif' |  asset_url }}" alt="Checkout cards slide one"> -->
+				<img data-sizes="100vw" src="{{ section.settings.image_real_world_one | img_url:"master" }}" alt="Checkout cards slide one">
+        </div>
+        <div class="carousel-cell">
+<!--           <img src="{{ 'BUDDY_metal_card.gif' | asset_url }}" alt="Checkout cards slide two"> -->
+          <img data-sizes="100vw" src="{{ section.settings.image_real_world_two | img_url:"master" }}" alt="Checkout cards slide two">
+        </div>
+      </div>
+    </div>
+    <p>Get your pet turned into something memorable<br> that will last forever!</p>
+<!--     <center><div class="btn button Button--secondary product_option">Pokefy it</div></center> -->
+  </div>
+
+  <script>  
+    (function() {
+      var tabHeaders = document.querySelectorAll('.quality-tab-title');
+      var tabs = document.querySelectorAll('.quality-tab');
+      var tabActive = 0;
+
+      var prev = document.querySelectorAll('.quality-tab-prev');
+      var next = document.querySelectorAll('.quality-tab-next');
+
+      function switchTab (tabName) {
+        tabHeaders.forEach(function(elem, index) {
+          if (elem.dataset.tab === tabName) {
+            elem.classList.add('tab-active');
+            tabActive = index;
+          } 
+          else {
+            elem.classList.remove('tab-active');
+          }
+        });
+
+        tabs.forEach(function(elem) {
+          if (elem.dataset.tab === tabName) {
+            elem.classList.add('tab-active');
+          }
+          else {
+            elem.classList.remove('tab-active');
+          }
+        });
+      }
+
+      tabHeaders.forEach(function(elem) {
+        elem.addEventListener('click', function() {
+          if (elem.classList.contains('tab-active')) return;
+          switchTab(elem.dataset.tab);
+        });
+      });
+
+      prev.forEach(function(elem) {
+        elem.addEventListener('click', function() {
+          var length = document.body.classList.contains('ab-test__framed-print') ? tabHeaders.length - 1 : tabHeaders.length;
+          var tabName = tabHeaders[tabActive === 0 ? length - 1 : tabActive - 1].dataset.tab;
+          switchTab(tabName);
+        });
+      });
+
+      next.forEach(function(elem) {
+        elem.addEventListener('click', function() {
+          var length = document.body.classList.contains('ab-test__framed-print') ? tabHeaders.length - 1 : tabHeaders.length;
+          var tabName = tabHeaders[tabActive === length - 1 ? 0 : tabActive + 1].dataset.tab;
+          switchTab(tabName);
+        });
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {function getTabName(layout) {
+        return layout.includes('Framed Print') ? 'framed-print' : layout.includes('Framed Canvas') ? 'framed-canvas' : 'canvas';
+      } })
+
+    }());
+  </script>
+
+
+
+</div>

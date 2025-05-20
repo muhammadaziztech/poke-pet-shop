@@ -1,0 +1,67 @@
+{% for tag in product.tags %}
+  {% if request.host contains "au.pokepetshop" %}
+      {% if tag == 'discount-2' and settings.au_dis_code2 != "" %}
+      <div class="single-prodduct-promo">
+        <div class="promo-box">
+          <h7>{{ settings.au_dis_text2 }}</h7>
+          <h7><span>{{ settings.au_dis_code2 }}</span></h7>    
+        </div>
+      </div>
+      {% elsif tag == 'discount' and settings.au_dis_code != "" %}
+      <div class="single-prodduct-promo">
+        <div class="promo-box">
+          <h4> {{ settings.au_dis_text }}</h4>
+          <h5>Guaranteed Delivery for Digital Only</h5>
+        </div>
+      </div>
+      {% endif %}
+  {% elsif request.host contains 'ca.pokepetshop.com' %}
+      {% if tag == 'discount-2' and settings.au_dis_code2 != "" %}
+      <div class="single-prodduct-promo">
+        <div class="promo-box">
+          <h7>{{ settings.ca_dis_text2 }}</h7>
+          <h7><span>{{ settings.ca_dis_code2 }}</span></h7>    
+        </div>
+      </div>
+      {% elsif tag == 'discount' and settings.ca_dis_code != "" %}
+      <div class="single-prodduct-promo">
+        <div class="promo-box">
+          <h4> {{ settings.ca_dis_text }}</h4>
+          <h5></h5>
+        </div>
+      </div>
+      {% endif %}
+  {% elsif request.host contains 'pokepetshop.co.uk' %}
+    {% if tag == 'discount-2' and settings.uk_dis_code2 != "" %}
+    <div class="single-prodduct-promo">
+      <div class="promo-box">
+        <h7>{{ settings.uk_dis_text2 }}</h7>
+        <h7><span>{{ settings.uk_dis_code2 }}</span></h7>    
+      </div>
+    </div>
+    {% elsif tag == 'discount' and settings.uk_dis_code != "" %}
+    <div class="single-prodduct-promo">
+      <div class="promo-box">
+        <h4> {{ settings.uk_dis_text }}</h4>
+        <h5></h5>
+      </div>
+    </div>
+    {% endif %}
+  {% else %}
+      {% if tag == 'discount-2' and settings.dis_code2 != "" %}
+      <div class="single-prodduct-promo">
+        <div class="promo-box">
+          <h7>{{ settings.dis_text2 }}</h7>
+          <h7><span>{{ settings.dis_code2 }}</span></h7>    
+        </div>
+      </div>
+      {% elsif tag == 'discount' and settings.dis_code != "" %}
+      <div class="single-prodduct-promo">
+        <div class="promo-box">
+          <h4> {{ settings.dis_text }}</h4>
+          <h5></h5>
+        </div>
+      </div>
+      {% endif %}
+  {% endif %}
+{% endfor %}

@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "pf-cd74adeb": {
+      "type": "pf-cd74adeb",
+      "settings": {}
+    }
+  },
+  "order": [
+    "pf-cd74adeb"
+  ],
+  "layout": "theme.pagefly"
+}
